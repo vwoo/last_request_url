@@ -1,7 +1,7 @@
 LastRequestURL
 ===============
 
-This plugin will keep track of the last GET request URL. A common use case is to redirect the user back to where they were before attempting to login or logout.
+This Rails plugin will keep track of the last request URL. A common use case is to redirect the user back to where they were before attempting to login or logout.
 
 
 Example
@@ -22,9 +22,9 @@ To access the last request url from the controller or view, call #last_request_u
 
 By default, a request is recorded only:
   1) through the GET method
-  2) if the format is HTML or nothing
+  2) if the format not nil or is is HTML
 
-The reason for the HTML requirement is that users normally only want to be redirected to webpages. Ff the last request was for a PDF, for instance, the user will have to download it again.
+The reason for the HTML requirement is that users are normally redirected to webpages. If the last request was for a PDF, for instance, the user will be asked to download it again.
 
 
 
@@ -38,4 +38,5 @@ skip_before_filter track_last_request_url
 
 
 
-Copyright (c) 2008 Vincent Woo, released under the MIT license
+Copyright (c) 2008 Vincent Woo http://www.undefinedrange.com/
+Released under the MIT license
