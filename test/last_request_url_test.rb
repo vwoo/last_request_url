@@ -7,7 +7,7 @@ require 'test_help'
 
 class ExampleController < ActionController::Base
   include VincentWoo::LastRequestUrl
-  after_filter :track_last_request_url
+  before_filter :track_last_request_url
   
   def rescue_action(e); raise e; end
   
