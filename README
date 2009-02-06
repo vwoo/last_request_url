@@ -18,7 +18,7 @@ end
 
 
 
-To access the last request url from the controller or view, call last_request_url like in the following example:
+To access the last request url from the controller or view, call the last_request_url method like in the following example:
   redirect_to last_request_url
 
 
@@ -31,7 +31,7 @@ The reason for the HTML requirement is that users normally only want to be redir
 
 
 
-If you have a different set of criteria, override #track_last_request_url? in the controller to return a boolean.
+If you have a different set of criteria, override #track_last_request_url? or additional_conditions_for_tracking_last_request_url in the controller to return a boolean.
 
 
 

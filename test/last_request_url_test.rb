@@ -57,4 +57,15 @@ class LastRequestUrlTest < Test::Unit::TestCase
     get :index
     assert_nil session[:last_request_url]
   end
+  
+  def test_tracking_conditions_should_be_easily_added_to_without_clobbering_base_conditions
+    class << @controller
+      def additional_conditions_for_tracking_last_request_url
+        params[:controller] != 'example'
+      end
+    end
+    
+    get :index
+    assert_nil session[:last_request_url]
+  end
 end
