@@ -24,7 +24,7 @@ end
 
 
 
-class LastRequestUrlTest < Test::Unit::TestCase
+class LastRequestUrlTest < ActionController::TestCase
   def setup
     @controller   = ExampleController.new
     @request      = ActionController::TestRequest.new
