@@ -13,7 +13,7 @@ To use this plugin, add the following into #{Rails.root}/app/controllers/applica
 
 class ApplicationController < ActionController::Base
   include VincentWoo::LastRequestUrl
-  before_filter: :track_last_request_url
+  before_filter :track_last_request_url
 end
 
 
@@ -36,7 +36,7 @@ If you have a different set of criteria, override #track_last_request_url? or ad
 
 
 If you want to be selective of which controller should or should not track the request url, then do:
-skip_before_filter track_last_request_url
+skip_before_filter :track_last_request_url
 
 
 
